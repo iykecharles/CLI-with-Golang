@@ -1,0 +1,127 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	fmt.Println("welcome to the command line interface in Golang")
+	time.Sleep(5 * time.Second)
+	thequestions()
+
+}
+
+func thequestions() {
+	fmt.Println("The program would help you calculate your cgpa.Enjoy!")
+	time.Sleep(5 * time.Second)
+	yourscore := 0
+	var ecommerce string
+	var myanswer string
+	var ecommercesystem string
+	//1 - ECOMMERCE
+	fmt.Println("what grade did you get in the course ECOMMERCE")
+	fmt.Scan(&ecommerce)
+	myanswer = ecommerce
+	if myanswer == "A"{
+		yourscore = 5 * 15
+
+	}else if myanswer == "B"{
+		yourscore = 4 * 15
+	}
+	fmt.Println(yourscore)
+
+
+	//2 - ECOMMERCESYSTEM
+	fmt.Println("what grade did you get in the course ecommercesystem")
+	fmt.Scan(&ecommercesystem)
+	myanswer = ecommercesystem
+	if myanswer == "A"{
+		yourscore = 5 * 15
+
+	}else if myanswer == "B"{
+		yourscore = 4 * 15
+	}
+	fmt.Println(yourscore)
+}
+
+
+//for the future
+package main
+
+import (
+	"database/sql"
+	"fmt"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+func main() {
+	// Open a connection to the database
+	db, err := sql.Open("mysql", "user:password@tcp(localhost:3306)/database_name")
+	if err != nil {
+		fmt.Println("Error opening database:", err)
+		return
+	}
+	defer db.Close()
+
+	// Execute a query to retrieve data from the database
+	rows, err := db.Query("SELECT name, age FROM users")
+	if err != nil {
+		fmt.Println("Error executing query:", err)
+		return
+	}
+	defer rows.Close()
+
+	// Iterate over the rows of data returned from the query
+	for rows.Next() {
+		var name string
+		var age int
+		err := rows.Scan(&name, &age)
+		if err != nil {
+			fmt.Println("Error scanning row:", err)
+			return
+		}
+		fmt.Println("Name:", name, "Age:", age)
+	}
+}
+
+case "A":
+			score += 5 * 15
+		case "B":
+			score += 5 * 15
+
+
+
+for _, course := range courses {
+		fmt.Println("what grade did you get for the course ...!", course)
+		var answer string
+		fmt.Scan(&answer)
+		grades = append(grades, answer)
+	}
+
+	for _, grade := range grades {
+		switch grade {
+		var course = courses[i]
+		case "A":
+			if course == "Msc Project" {
+				score += 5 * 60
+			} else {
+				score += 5 * 15
+
+			}
+
+		case "B":
+			if course == "Msc Project" {
+				score += 4.5 * 60
+			} else {
+				score += 4.5 * 15
+
+			}
+
+		}
+	}
+	fmt.Println(grades)
+
+	fmt.Println((score / 180) * 100)
+}
